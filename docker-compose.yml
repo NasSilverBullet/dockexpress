@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bin/www
+    environment:
+      - DEBUG=express:* node ./bin/www
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
